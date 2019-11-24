@@ -1,6 +1,6 @@
 ﻿# Today I Learned
 
-
+MARKDOWN 설명 링크 : https://gist.github.com/ihoneymon/652be052a0727ad59601
 ## 20191123
 ### T-academy
 * https://tacademy.skplanet.com/live/player/onlineLectureDetail.action?seq=130
