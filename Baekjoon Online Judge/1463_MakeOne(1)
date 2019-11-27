@@ -1,0 +1,45 @@
+# MakeOne.py
+# 백준 1463번
+'''
+def MakeOne():
+    N = int(input("choose a number : "))
+    cnt=0
+
+    while (N!=1):    
+        if N%3==0:
+            if (N%3)%2==0 or (N%3)%2==1 :
+                N=N/3
+                cnt=cnt+1
+                print('N:', N, ' cnt: ', cnt)
+        elif N%2==0:
+            if (N%2)%3==0 or (N%2)%3==1 :
+                N=N/2
+                cnt=cnt+1
+                print('N:', N, ' cnt: ', cnt)
+        elif (N-1)%2==0 or (N-1)%3==0:
+            N=N-1
+            cnt=cnt+1
+            print('N:', N, ' cnt: ', cnt)
+
+    print(cnt)
+'''
+
+N = int(input())
+result = 1
+cnt = 0
+
+while (result != N) :
+    if result*3 <= N:
+        result = result*3
+        cnt = cnt+1
+        #print('result:', result, ' cnt: ', cnt)
+    elif result*2 <= N:
+        result = result*2
+        cnt = cnt+1
+        #print('result:', result, ' cnt: ', cnt)
+    else:
+        result = result+1
+        cnt = cnt+1
+        #print('result:', result, ' cnt: ', cnt)
+
+print(cnt)
