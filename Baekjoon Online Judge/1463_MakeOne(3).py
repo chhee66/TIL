@@ -1,6 +1,6 @@
 # MakeOne3.py
 # Sol-3.
-N = int(input("choose a number : "))
+N = int(input(""))
 dict = {0:9999999, 1:0}
 
 for i in range(2, N+1):
