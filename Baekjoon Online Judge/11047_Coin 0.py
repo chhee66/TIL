@@ -13,7 +13,7 @@ for i in range(0, N):
 
 while K!=0 :
     for j in range(1, N+1):
-        if coins[N-j]<K :
+        if coins[N-j]<=K :     # =< (X)     <= (O)
             #print('coins[%d]:'%(N-j), coins[N-j])
             val = int(K/coins[N-j])
             K = K - (coins[N-j]*val)
@@ -21,4 +21,4 @@ while K!=0 :
             cnt = cnt + val
             #print('cnt:', cnt)
 
-print(int(cnt))
+print(cnt)
