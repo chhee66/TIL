@@ -45,8 +45,8 @@ def search_exist_list(list_name):
     if count==N :
         return -1 #전체 종료
             
-'''
-############### DFS ############### (출력은 되는데, 뒤에 남는 빨간 줄은 뭐지..?)
+
+############### DFS ############### 
 
 def DFS_(first):
     main_key = first
@@ -63,7 +63,7 @@ while (DFS_(key)) :
     key = DFS_(key)
 print(key, end=' ')
 
-'''
+
 ############### BFS ###############
 
 def BFS_(first):
@@ -72,9 +72,9 @@ def BFS_(first):
         while (BFS[first]) :
             print(min(BFS[first]), end=' ')
             delete_from_list(BFS, min(BFS[first]))       
-    search_exist_list(BFS)
+    return search_exist_list(BFS)
 
 key=V
 print(key, end=' ')
-while (key != -1) :
+while (key != -1):
     key = BFS_(key)
