@@ -46,8 +46,7 @@ def search_exist_list(list_name):
         return -1 #전체 종료
             
 
-############### DFS ############### 
-
+############### DFS ###############
 def DFS_(first):
     main_key = first
     delete_from_list(DFS, main_key)
@@ -63,15 +62,18 @@ while (DFS_(key)) :
     key = DFS_(key)
 print(key, end=' ')
 
-
+print()
 ############### BFS ###############
 
 def BFS_(first):
     delete_from_list(BFS, first)
     if BFS[first]:
         while (BFS[first]) :
+            print('BFS:',BFS)
             print(min(BFS[first]), end=' ')
-            delete_from_list(BFS, min(BFS[first]))       
+            delete_from_list(BFS, min(BFS[first]))
+            #BFS[min(BFS[first])] = list()
+            del(BFS[min(BFS[first])][:])
     return search_exist_list(BFS)
 
 key=V
