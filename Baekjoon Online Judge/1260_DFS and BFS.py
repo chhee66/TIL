@@ -82,5 +82,5 @@ def BFS_(first):
     return search_exist_list(BFS)
 
 key=V
-while (key != -1):
+while (key != 0):
     key = BFS_(key)
