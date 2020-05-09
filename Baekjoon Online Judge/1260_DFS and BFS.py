@@ -50,33 +50,38 @@ def search_exist_list(list_name):
 def DFS_(first):
     main_key = first
     delete_from_list(DFS, main_key)
+    print('\n\nDFS1:',DFS)
     if DFS[main_key]:
+        print('\n\nDFS2:',DFS)
         return min(DFS[first])
     else :
+        print('print:',search_exist_list(DFS))
         search_exist_list(DFS)
 
 
 key=V
-while (DFS_(key)) :
-    print(key, end=' ')
-    key = DFS_(key)
 print(key, end=' ')
+while (DFS_(key)) :
+    print('\n\nin\n\n')
+    key = DFS_(key)
+    print(key, end=' ')
 
 print()
+'''
 ############### BFS ###############
 
 def BFS_(first):
+    print(first, end=' ')
     delete_from_list(BFS, first)
     if BFS[first]:
         while (BFS[first]) :
-            print('BFS:',BFS)
-            print(min(BFS[first]), end=' ')
-            delete_from_list(BFS, min(BFS[first]))
-            #BFS[min(BFS[first])] = list()
-            del(BFS[min(BFS[first])][:])
+            minimum = min(BFS[first])
+            print(minimum, end=' ')
+            delete_from_list(BFS, minimum)
+            BFS[minimum] = list()
     return search_exist_list(BFS)
 
 key=V
-print(key, end=' ')
 while (key != -1):
     key = BFS_(key)
+'''
