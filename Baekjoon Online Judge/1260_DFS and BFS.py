@@ -43,31 +43,31 @@ def search_exist_list(list_name):
         else :
             count = count+1
     if count==N :
-        return -1 #전체 종료
+        return 0 #전체 종료
             
 
 ############### DFS ###############
 def DFS_(first):
     main_key = first
     delete_from_list(DFS, main_key)
-    print('\n\nDFS1:',DFS)
+    #print('\n\nDFS1:',DFS)
     if DFS[main_key]:
-        print('\n\nDFS2:',DFS)
+        #print('\n\nDFS2:',DFS)
         return min(DFS[first])
     else :
-        print('print:',search_exist_list(DFS))
-        search_exist_list(DFS)
+        #print('print:',search_exist_list(DFS))
+        return search_exist_list(DFS)
 
 
 key=V
 print(key, end=' ')
 while (DFS_(key)) :
-    print('\n\nin\n\n')
+    #print('\n\nin\n\n')
     key = DFS_(key)
     print(key, end=' ')
 
 print()
-'''
+
 ############### BFS ###############
 
 def BFS_(first):
@@ -84,4 +84,3 @@ def BFS_(first):
 key=V
 while (key != -1):
     key = BFS_(key)
-'''
