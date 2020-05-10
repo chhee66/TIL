@@ -28,6 +28,14 @@ for k, v in dict.items():
     BFS[k]=v
 '''
 
+# 간선이 없는 경우, 분리해주기
+for k in range(1, N+1):
+    if not DFS[k]:
+        DFS[k]=[-1]
+        BFS[k]=[-1]
+
+#print(DFS, '\n',BFS)
+
 # 공통 함수_1
 def delete_from_list(list_name, num):
     for i in range(1, N+1):
@@ -39,6 +47,8 @@ def search_exist_list(list_name):
     count = 0
     for i in range(1, N+1):
         if list_name[i]:
+            #if list_name[i] == [-1] :
+            #    list_name[i] = []
             return i
         else :
             count = count+1
@@ -48,6 +58,10 @@ def search_exist_list(list_name):
 
 ############### DFS ###############
 def DFS_(first):
+    if(first==0):
+       quit
+    if DFS[first]==[-1]:
+        DFS[first]=[]
     main_key = first
     delete_from_list(DFS, main_key)
     #print('\n\nDFS1:',DFS)
@@ -55,14 +69,13 @@ def DFS_(first):
         #print('\n\nDFS2:',DFS)
         return min(DFS[first])
     else :
-        #print('print:',search_exist_list(DFS))
         return search_exist_list(DFS)
 
 
 key=V
 print(key, end=' ')
-while (DFS_(key)) :
-    #print('\n\nin\n\n')
+while (DFS_(key)) :   # key로 바꿔보자.
+    #print('\n-------in--------\n')
     key = DFS_(key)
     print(key, end=' ')
 
@@ -71,6 +84,8 @@ print()
 ############### BFS ###############
 
 def BFS_(first):
+    if BFS[first]==[-1]:
+        BFS[first]=[]
     print(first, end=' ')
     delete_from_list(BFS, first)
     if BFS[first]:
@@ -83,4 +98,5 @@ def BFS_(first):
 
 key=V
 while (key != 0):
+    #print('\n',BFS,'\n')
     key = BFS_(key)
