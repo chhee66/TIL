@@ -29,4 +29,6 @@ MARKDOWN 설명 링크 : https://gist.github.com/ihoneymon/652be052a0727ad59601
 * SVN : subversion (version control system in eclipse)
 * Python 개념
  - Python은 이차원배열을 지원하지 않는다. 따라서 이중리스트로 구현해야한다.
- <소스 적기> /'Matrix = [[0]*N for i in range(N)]'/ # N*N
+```
+Matrix = [[0]*N for i in range(N)] # N*N
+```
