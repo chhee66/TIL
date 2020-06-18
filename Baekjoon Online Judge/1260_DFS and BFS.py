@@ -34,15 +34,21 @@ for k, v in dict.items():
 '''
 
 
-# 공통 함수_1
+# 공통 함수
 def delete_from_list(list_name, num):
     for i in range(1, N + 1):
         if num in list_name[i]:
             list_name[i].remove(num)
 
 
-# 공통 함수_2
-def search_exist_list(num):
+def check_relation(num):
+    for i in range(1, N + 1):
+        if Matrix[num][i] == 1 :
+            return "OK"
+    return 0
+
+# DFS
+def search_exist_list_for_DFS(num):
     for i in range(1, N+1):
         if i in result:
             continue
@@ -51,13 +57,12 @@ def search_exist_list(num):
                 return i
             else:
                 return 0
-
-
-def check_relation(num):
-    for i in range(1, N + 1):
-        if Matrix[num][i]==1 :
-            return "OK"
+''' # 이렇게 줄여도 실행결과가 같나?
+    for i in range(1, N+1):
+        if (i not in result) and (Matrix[num][i] == 1):
+            return i
     return 0
+'''
 
 
 ############### DFS ###############
@@ -70,7 +75,7 @@ def DFS_(first):
         if DFS[main_key]:
             return min(DFS[first])
         else:
-            return search_exist_list(main_key)
+            return search_exist_list_for_DFS(main_key)
     else:
         return 0
 
@@ -85,8 +90,24 @@ for i in range(N):
         result.append(key)
 
 print(*result, sep=" ")
-print('\n')
-'''
+
+
+# BFS
+def search_exist_list_for_BFS(num):
+    for i in range(1, N+1):
+        if i in result:
+            continue
+        elif Matrix[num][i] == 1:
+            return is_it_min(BFS, i)
+    return 0
+
+def is_it_min(list_name, i):
+    if i > min(list_name[i]):
+        return min(list_name[i])
+    else:
+        return i
+
+result=[]
 ############### BFS ###############
 def BFS_(first):
     result.append(first)
@@ -94,14 +115,14 @@ def BFS_(first):
     if BFS[first]:
         while (BFS[first]) :
             minimum = min(BFS[first])
-            print(minimum, end=' ')5
+            result.append(minimum)
             delete_from_list(BFS, minimum)
             BFS[minimum] = list()
-    return search_exist_list(BFS)
+    return search_exist_list_for_BFS(minimum)
     
 key=V
-result = [key] #need?
 while (key != 0):
     key = BFS_(key)
-print(result)
-'''
+    if key == None:
+        break
+print(*result, sep=" ")
