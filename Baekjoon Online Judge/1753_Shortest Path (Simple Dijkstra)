@@ -1,0 +1,37 @@
+from heapq import *
+
+V, E = map(int, input().split())
+K= int(input())
+
+edge = [[] for _ in range(V+1)]
+visit = [False for _ in range(V+1)]
+dist = [-1 for _ in range(V+1)]
+
+for j in range(E):
+    u, v, w = map(int, input().split())
+    edge[u].append([v, w])
+que = []
+heappush(que, [1, 0])
+
+cnt=1
+while(que):
+    cur = []
+    cur = heappop(que)
+    #print(cur) #[1, 0]
+
+    if visit[cur[0]]:
+        continue
+
+    visit[cur[0]] = True
+    dist[cur[0]] = cur[1]
+    for e in edge[cnt]:
+        # print(e)
+        if visit[e[0]] is False:
+            que.append([e[0], cur[1]+e[1]])
+    cnt = cnt+1
+
+for i in range(1, V+1):
+    if dist[i]==-1:
+        print("INF")
+    else:
+        print(dist[i])
