@@ -32,3 +32,12 @@ MARKDOWN 설명 링크 : https://gist.github.com/ihoneymon/652be052a0727ad59601
 ```
 Matrix = [[0]*N for i in range(N)] # N*N
 ```
+
+## 20200722
+### 1753_최단거리(Shortest Path_Dijkstra) (Baekjoon Online Judge)
+* Pycharm 단축키
+ - Ctrl+Shift+F10 : 실행(Run)
+ - F8 : (디버깅시) 한 줄씩 실행
+ - F7 : (디버깅시) 함수 안쪽으로 실행
+* Dynamic arrays
+ - JAVA's ArrayList = Python's List
