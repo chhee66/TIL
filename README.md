@@ -39,6 +39,7 @@ Matrix = [[0]*N for i in range(N)] # N*N
  - Ctrl+Shift+F10 : 실행(Run)
  - F8 : (디버깅시) 한 줄씩 실행 (=Step Over)
  - F7 : (디버깅시) 함수 안쪽으로 실행 (=Step Into)
+ - Ctrl + / : 주석 생성 또는 제거
  
 * Eclipse 단축키
  - F11 : 실행(Run)
