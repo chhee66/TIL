@@ -20,15 +20,15 @@ MARKDOWN 설명 링크 : https://gist.github.com/ihoneymon/652be052a0727ad59601
 ### 1260_DFS and BFS (Baekjoon Online Judge)
 *  
 * Pycharm 단축키
- - Shift + F10 : (RUN shorcut 옆에 선택된) 파일 실행하기
- - Alt + Shift + F10 : 실행할 파일을 선택하여 실행하기
- - F8 : (디버깅시) 한 줄씩
- - F7 : (디버깅시) 함수 내로 들어가기
- - tab : indent multiple lines in pycharm
- - Shift + tab : unindent multiple lines in pycharm
+  - Shift + F10 : (RUN shorcut 옆에 선택된) 파일 실행하기
+  - Alt + Shift + F10 : 실행할 파일을 선택하여 실행하기
+  - F8 : (디버깅시) 한 줄씩
+  - F7 : (디버깅시) 함수 내로 들어가기
+  - tab : indent multiple lines in pycharm
+  - Shift + tab : unindent multiple lines in pycharm
 * SVN : subversion (version control system in eclipse)
 * Python 개념
- - Python은 이차원배열을 지원하지 않는다. 따라서 이중리스트로 구현해야한다.
+  - Python은 이차원배열을 지원하지 않는다. 따라서 이중리스트로 구현해야한다.
 ```
 Matrix = [[0]*N for i in range(N)] # N*N
 ```
@@ -36,17 +36,17 @@ Matrix = [[0]*N for i in range(N)] # N*N
 ## 20200722
 ### 1753_최단거리(Shortest Path_Dijkstra) (Baekjoon Online Judge)
 * Pycharm 단축키
- - Ctrl+Shift+F10 : 실행(Run)
- - F8 : (디버깅시) 한 줄씩 실행 (=Step Over)
- - F7 : (디버깅시) 함수 안쪽으로 실행 (=Step Into)
- - Ctrl + / : 주석 생성 또는 제거
- - tab : <- (내어쓰기, unindent)
- - Shift+tab : -> (들여쓰기, indent)
+  - Ctrl+Shift+F10 : 실행(Run)
+  - F8 : (디버깅시) 한 줄씩 실행 (=Step Over)
+  - F7 : (디버깅시) 함수 안쪽으로 실행 (=Step Into)
+  - Ctrl + / : 주석 생성 또는 제거
+  - tab : <- (내어쓰기, unindent)
+  - Shift+tab : -> (들여쓰기, indent)
  
 * Eclipse 단축키
- - F11 : 실행(Run)
- - F6 : (디버깅시) 한 줄씩 실행 (=Step Over)
- - F5 : (디버깅시) 함수 안쪽으로 실행 (=Step Into)
+  - F11 : 실행(Run)
+  - F6 : (디버깅시) 한 줄씩 실행 (=Step Over)
+  - F5 : (디버깅시) 함수 안쪽으로 실행 (=Step Into)
  
 * Dynamic arrays
- - JAVA's ArrayList = Python's List
+  - JAVA's ArrayList = Python's List
