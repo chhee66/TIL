@@ -37,7 +37,13 @@ Matrix = [[0]*N for i in range(N)] # N*N
 ### 1753_최단거리(Shortest Path_Dijkstra) (Baekjoon Online Judge)
 * Pycharm 단축키
  - Ctrl+Shift+F10 : 실행(Run)
- - F8 : (디버깅시) 한 줄씩 실행
- - F7 : (디버깅시) 함수 안쪽으로 실행
+ - F8 : (디버깅시) 한 줄씩 실행 (=Step Over)
+ - F7 : (디버깅시) 함수 안쪽으로 실행 (=Step Into)
+ 
+* Eclipse 단축키
+ - F11 : 실행(Run)
+ - F6 : (디버깅시) 한 줄씩 실행 (=Step Over)
+ - F5 : (디버깅시) 함수 안쪽으로 실행 (=Step Into)
+ 
 * Dynamic arrays
  - JAVA's ArrayList = Python's List
