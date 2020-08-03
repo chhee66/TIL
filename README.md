@@ -40,8 +40,8 @@ Matrix = [[0]*N for i in range(N)] # N*N
   - F8 : (디버깅시) 한 줄씩 실행 (=Step Over)
   - F7 : (디버깅시) 함수 안쪽으로 실행 (=Step Into)
   - Ctrl + / : 주석 생성 또는 제거
-  - tab : <- (내어쓰기, unindent)
-  - Shift+tab : -> (들여쓰기, indent)
+  - tab : -> (들여쓰기, indent)
+  - Shift+tab : <- (내어쓰기, unindent)
  
 * Eclipse 단축키
   - F11 : 실행(Run)
