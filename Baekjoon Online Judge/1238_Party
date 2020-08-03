@@ -1,0 +1,70 @@
+from heapq import heappop, heappush #import 없이 from heapq만 쓰면 heapq.heappush, heapq.heappop 이라고 길게 써줘야한다.
+
+N, M, X = map(int, input().split())
+Edge = [[] for _ in range((N+1))]
+Edge2 = [[] for _ in range((N+1))]
+XtoN = [0 for _ in range((N+1))]
+NtoX = [0 for _ in range((N+1))]
+total = [0 for _ in range((N+1))]
+
+for _ in range(M):
+    u, v, w = map(int, input().split())
+    Edge[u].append([w, v])
+    Edge2[v].append([w, u])
+
+
+def Dijkstra(X): # X -> N
+    que = []
+    visit = [False for _ in range(N+1)]
+    heappush(que, [0, X])
+    # print(que) #[[0, 2]]
+    while que:
+        Point = heappop(que)
+        # print(type(Point)) #list
+        # print(Point) #[0, 2]
+
+        if visit[Point[1]] == True:
+            continue
+
+        visit[Point[1]] = True
+        XtoN[Point[1]] = Point[0]
+
+        for e in Edge[Point[1]] :
+            if visit[e[1]] == False:
+                heappush(que, [Point[0]+e[0], e[1]])
+
+
+def de_Dijkstra(X): # N -> X
+    que = []
+    visit = [False for _ in range(N+1)]
+    heappush(que, [0, X])
+    # print(que) #[[0, 2]]
+    while que:
+        Point = heappop(que)
+        # print(type(Point)) #list
+        # print(Point) #[0, 2]
+
+        if visit[Point[1]] == True:
+            continue
+
+        visit[Point[1]] = True
+        NtoX[Point[1]] = Point[0]
+
+        for e in Edge2[Point[1]] :
+            if visit[e[1]] == False:
+                heappush(que, [Point[0]+e[0], e[1]])
+
+
+Dijkstra(X)
+de_Dijkstra(X)
+'''
+min = 0
+index = 0
+for i in range(1, N+1):
+    if min >= NtoX[i]+XtoN[i]:
+        min = NtoX[i]+XtoN[i]
+'''
+for i in range(1, N+1):
+    total[i] = NtoX[i]+XtoN[i]
+
+print(max(total))
