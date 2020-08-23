@@ -1,0 +1,41 @@
+# T : 테스트 케이스 개수 (자연수)
+# x, y : f(x) ~ f(y)의 최소 점프 횟수 중 최대값을 구해라.
+
+import sys
+#inf = open('input.txt')
+inf = sys.stdin
+
+T = inf.readline()
+dp = []
+
+# dp를 y까지 구하고, 그 중 최소값을 Answer에 저장한다.
+for t in range(0, int(T)):
+    Answer = 0 # 최소값
+    flag = 0
+    jump = 0  # 1씩 증가한다.
+
+    x, y = map(int, inf.readline().split()) # int보다 큰 자료형으로 바꿔줘야할듯! (송희차)
+
+    for i in range(y+1):
+        print('i :', i, "/ jump :", jump)
+        sub = (flag + jump) - i
+        if sub==0:
+            dp.append(flag + jump)
+            flag = i
+        else :
+            reset = True
+            dp.append(flag + dp[i-flag])
+
+        jump = jump + 1
+
+
+    for j in range(x, y+1):
+        Answer = max(Answer, dp[j])
+
+    for k in range(y+1):
+        print('dp[', k, '] :',  dp[i]) # '+'로 출력은 같은 문자열끼리만 가능하다?
+    print('Answer :', Answer)
+
+    # print('Case #%d'%(int(t)+1))
+    # print(Answer)
+inf.close()
