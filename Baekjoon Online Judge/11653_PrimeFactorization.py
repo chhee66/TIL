@@ -10,11 +10,15 @@ def isPrime(a):
             return False
     return True
 
-for i in range(n+1): # 0~100
+for i in range(n+1):
+    if isPrime(i):
+        prime.append(i)
+
+for p in prime:
+    '''
     if n==1:
         break
-    result = isPrime(i)
-    if result:
-        while (n!=1) and (n % i) == 0:
-            print(i)
-            n = int(n / i)
+    '''
+    while n!=1 and n%p == 0:
+        print(p)
+        n = int(n / p)
