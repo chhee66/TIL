@@ -1,29 +1,20 @@
 import sys
-
 n = int(sys.stdin.readline())
+prime = []
 
-def find_Prime(n):
-    Prime = []  # 소수 리스트 O
-    for i in range(2, n+1):   # math.sqrt(n)까지? or n까지?
-        is_prime = True
-        if len(Prime)==0:   # 소수 리스트에 아무것도 없으면,
-            Prime.append(i) # i를 추가한다.
-        else:
-            for p in Prime:
-                if (i%p) == 0:
-                    is_prime = False
-                    break
-            if is_prime==True:
-                Prime.append(i)
-    return Prime    # 소수 리스트를 반환
+def isPrime(a):
+    if a<2: # 0, 1은 소수가 아니다.
+        return False
+    for i in range(2, a): # a=2일때 동작x, 따라서 2는 True
+        if a%i == 0:
+            return False
+    return True
 
-def primeFactorization(n):
-    prime = find_Prime(n)
-    for p in prime:
-        while (n%p)==0 :
-            if(n==1):
-                return
-            print(p)
-            n = int(n/p)
-
-primeFactorization(n)
+for i in range(n+1): # 0~100
+    if n==1:
+        break
+    result = isPrime(i)
+    if result:
+        while (n!=1) and (n % i) == 0:
+            print(i)
+            n = int(n / i)
